@@ -5,10 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListHeaderComponent } from './components/list-header/list-header.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
+import { ListFooterComponent } from './components/list-footer/list-footer.component';
+import { TodoDataService } from './todo-data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListHeaderComponent,
+    TodoListComponent,
+    TodoListItemComponent,
+    ListFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +25,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [TodoDataService],
+  bootstrap: [AppComponent],
+  exports: [ListHeaderComponent, TodoListComponent, TodoListItemComponent, ListFooterComponent]
 })
 export class AppModule { }

@@ -50,6 +50,7 @@ export class TodoDataService {
     // get me the whole array
     return this.todos;
   }
+  
   // Toggle todo complete
   toggleTodoComplete(todo: Todo | any){
     let updatedTodo = this.updateById(todo.id, {
